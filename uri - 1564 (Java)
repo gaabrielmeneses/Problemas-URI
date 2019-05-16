@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args){
+		int	numDeReclamacoes;
+		
+		Scanner leia = new Scanner(System.in);
+		
+		while(leia.hasNext()){
+			numDeReclamacoes = leia.nextInt();
+			if(numDeReclamacoes==0){
+				System.out.println("vai ter copa!");
+			}
+      else {
+				System.out.println("vai ter duas!");	
+			}
+		}
+	}
+}
