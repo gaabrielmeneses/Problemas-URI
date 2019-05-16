@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args){
+		int linhaOperacao, linha, coluna;
+		char operacao;
+		float soma, media;
+		
+		soma = 0.0f;
+		media = 0.0f;
+		
+    Scanner leia = new Scanner(System.in);
+		
+    linhaOperacao = leia.nextInt();
+		
+    operacao = leia.next().charAt(0);
+		
+    float[][] matriz = new float[12] [12];
+	
+    for(linha=0;linha<12;linha++){
+			for(coluna=0;coluna<12;coluna++){
+				matriz [linha][coluna] = leia.nextFloat();
+				if(linhaOperacao == linha){
+					soma += matriz [linha] [coluna];
+				}
+			}
+		}
+		media = soma/12;
+		
+    if(operacao == 'S'){
+			System.out.printf("%.1f\n", soma);
+		}
+    else if (operacao == 'M') {
+			System.out.printf("%.1f\n", media);
+		}
+		
+
+	}
+}
