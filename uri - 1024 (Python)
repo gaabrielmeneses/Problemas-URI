@@ -1,0 +1,28 @@
+def tratar_texto(texto):
+    numeros = ['1', '2', '3', '4', '5', '6', '7','8', '9', '0']
+    texto_lista = list(texto)
+    
+    for i in range(len(texto)):
+        if texto_lista[i].isupper() or texto_lista[i].islower() :
+            texto_lista[i] = chr(ord(texto_lista[i]) + 3)
+
+    texto_lista = texto_lista[::-1]
+
+    metade = len(texto)//2
+    
+    for i in range(len(texto)):
+        if i >= metade:
+             texto_lista[i] = chr(ord(texto_lista[i]) - 1)
+                
+    texto = ''.join(texto_lista)
+    return texto
+
+num_linhas = int(input())
+
+
+while(num_linhas > 0):
+    
+    texto = input()
+    novo_texto = tratar_texto(texto)
+    print(novo_texto)
+    num_linhas -= 1
